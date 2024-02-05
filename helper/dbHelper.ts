@@ -1,6 +1,9 @@
-import sql from 'mssql';
-import * as dotenv from 'dotenv';
-import { ConnectionPool, Transaction, ISOLATION_LEVEL } from "mssql";
+import sql, { ConnectionPool, Transaction, ISOLATION_LEVEL } from "mssql";
+import dotenv from "dotenv";
+
+dotenv.config({ path: "./.env.profile" });
+const profile = process.env.PROFILE || "default";
+dotenv.config({ path: `.env.${profile}` });
 
 const TRANSACTION_ROLLED_BACK_MESSAGE = 'Transaction rolled back';
 const TRANSACTION_COMMITTED_MESSAGE = 'Transaction committed successfully';
@@ -10,7 +13,6 @@ const TRANSACTION_ROLLBACK_ERROR = 'Transaction rollback error: ';
 const TRANSACTION_COMMIT_ERROR = 'Transaction commit error: ';
 const POOL_INITIALIZATION_ERROR = 'Could not supply connection pool';
 
-dotenv.config({ path: './.env.default' });
 let connPool: ConnectionPool;
 
 /*
