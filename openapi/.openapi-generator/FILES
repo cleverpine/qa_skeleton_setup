@@ -1,0 +1,14 @@
+apis/SystemApi.ts
+apis/TemplatesApi.ts
+apis/index.ts
+index.ts
+models/ApiSystemInfoGet200Response.ts
+models/ErrorData.ts
+models/ErrorResponse.ts
+models/InfoHolder.ts
+models/Template.ts
+models/TemplateFull.ts
+models/TemplateListResponse.ts
+models/TemplateResponse.ts
+models/index.ts
+runtime.ts
