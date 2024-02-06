@@ -45,7 +45,7 @@
     "postgres": "^3.4.3",
     "qs": "^6.11.2",
     "tsconfig-paths": "^4.2.0",
-    "cp-openapi-gen-plugin": "0.0.8"
+    "cp-openapi-gen-plugin": "0.0.9"
   },
   "eslintConfig": {
     "extends": [
