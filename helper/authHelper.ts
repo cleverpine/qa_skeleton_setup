@@ -1,12 +1,14 @@
 import axios, { AxiosResponse } from "axios";
-require("dotenv").config({ path: "./.env.default" });
+import dotenv from "dotenv";
+
+dotenv.config({ path: "./.env.default" });
 
 export async function getAccessToken(): Promise<string> {
   const tokenEndpoint = process.env.KC_TOKEN_URL;
   const grantType = process.env.KC_GRANT_TYPE;
   const clientId = process.env.KC_CLIENT_ID;
   const clientSecret = process.env.KC_CLIENT_SECRET;
-  const username = process.env.KC_EDOC_USER;
+  const username = process.env.KC_USER;
   const password = process.env.KC_PASSWORD;
   
   // Check if any environment variable is undefined.
@@ -34,6 +36,7 @@ export async function getAccessToken(): Promise<string> {
     );
     return response.data.access_token;
   } catch (error: any) {
-    throw error("Error obtaining access token:", error.message);
+    console.log("Error obtaining access token ");
+    throw error;
   }
 }

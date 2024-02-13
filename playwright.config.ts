@@ -37,8 +37,8 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: "DB interaction POC",
-      testMatch: 'tests/api/db_poc/**/*.spec.ts',
+      name: "Sample Api Tests",
+      testMatch: 'tests/api/**/*.spec.ts',
     },
   ],
 });
